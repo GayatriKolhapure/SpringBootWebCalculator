@@ -4,6 +4,7 @@ import ch.qos.logback.core.model.Model;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -31,15 +32,8 @@ public class HomeController {
     }
 
     @RequestMapping("addAlien")
-    public ModelAndView addAlien(@RequestParam("aID") String aID, @RequestParam("aName") String aName, ModelAndView mv){
+    public String addAlien(@ModelAttribute Alien alien){
 
-        Alien alien = new Alien();
-        alien.setaID(aID);
-        alien.setaName(aName);
-
-        mv.addObject("alien",alien);
-        mv.setViewName("result");
-
-        return mv;
+        return "result";
     }
 }
