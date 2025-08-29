@@ -29,4 +29,17 @@ public class HomeController {
 
         return mv;
     }
+
+    @RequestMapping("addAlien")
+    public ModelAndView addAlien(@RequestParam("aID") String aID, @RequestParam("aName") String aName, ModelAndView mv){
+
+        Alien alien = new Alien();
+        alien.setaID(aID);
+        alien.setaName(aName);
+
+        mv.addObject("alien",alien);
+        mv.setViewName("result");
+
+        return mv;
+    }
 }
