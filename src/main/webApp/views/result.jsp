@@ -12,6 +12,8 @@
 
     <h2> ${alien} </h2>
 
+    <h2> Welcome to the ${course} world...!</h2>
+
 
 
 
